@@ -1,0 +1,8 @@
+{
+  "name": "Remix Linguist 桌面悬浮翻译卡片",
+  "description": "轻量优雅的桌面小巧悬浮翻译卡片，支持边缘拖拽缩小为药丸胶囊、截图框选翻译（逐行中英对照）、即时划词翻译及多语种释义音标。",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

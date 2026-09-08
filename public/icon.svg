@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="50%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="glyphGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background Squircle -->
+  <rect x="32" y="32" width="448" height="448" rx="112" fill="url(#bgGrad)" filter="url(#dropShadow)" />
+  
+  <!-- Subtle border highlight -->
+  <rect x="33" y="33" width="446" height="446" rx="111" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-opacity="0.5" />
+
+  <!-- Translation Icon / Glyph '文 / A' -->
+  <g fill="url(#glyphGrad)" transform="translate(100, 106) scale(0.61)">
+    <!-- Language Globe / Translate symbol -->
+    <!-- 'A' letter left -->
+    <path d="M120 380 L180 180 L230 180 L290 380 L245 380 L230 325 L180 325 L165 380 Z M192 285 L218 285 L205 230 Z" />
+    <!-- Connector Arrow -->
+    <path d="M295 240 L345 240 L325 215 M345 240 L325 265" stroke="#93c5fd" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <!-- '文' character right -->
+    <path d="M380 185 L440 185 M410 160 L410 195 M350 220 L470 220 M425 225 C425 280 395 340 345 375 M380 250 C410 290 450 345 480 375" stroke="url(#glyphGrad)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </g>
+</svg>

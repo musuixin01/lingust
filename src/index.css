@@ -1,0 +1,352 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .frosted-glass-canvas {
+    background-color: #0a0a1a;
+    background-image: radial-gradient(circle at 10% 10%, #4338ca 0%, transparent 40%),
+      radial-gradient(circle at 90% 90%, #9d174d 0%, transparent 40%);
+  }
+
+  .frosted-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  }
+
+  .frosted-card-subtle {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .frosted-pill {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .frosted-badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  }
+
+  .glass-panel-dark {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  .glass-card-dark {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  .glass-pill {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-pill-dark {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+  }
+
+  @keyframes marquee-scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes linear-loading-slide {
+    0% {
+      transform: translateX(-120%);
+    }
+    100% {
+      transform: translateX(220%);
+    }
+  }
+
+  .animate-marquee-scroll {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: marquee-scroll 16s linear infinite;
+  }
+
+  .animate-marquee-scroll:hover {
+    animation-play-state: paused;
+  }
+
+  .animate-linear-loading {
+    animation: linear-loading-slide 1.25s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  .mask-pill-marquee {
+    mask-image: linear-gradient(to right, transparent, black 10px, black calc(100% - 10px), transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10px, black calc(100% - 10px), transparent);
+  }
+
+  /* =========================================================================
+     翻译中：Apple AI 风格向内呼吸流光体系 (Apple Intelligence Inward Breathing Aura)
+     - 呼吸不是往外放，而是从四周边缘向卡片/药丸内部流动与渗透呼吸
+     - 还原苹果 AI (Siri / Apple Intelligence) 响应时的标志性内向渐变漫射光幕
+     - 舒缓人体静息节律 (3.8s 慢速正弦呼吸波，过渡平滑细腻)
+     - 中心文字内容区 100% 通透清晰，零遮挡
+     ========================================================================= */
+  @keyframes apple-ai-flow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* 悠长向内呼吸脉冲：吸气时往内部漫延渗透与柔和内聚，绝不向外膨胀爆炸 */
+  @keyframes apple-ai-inward-breathe {
+    0%, 100% {
+      opacity: 0.45;
+      transform: scale(0.998);
+      filter: blur(8px);
+    }
+    50% {
+      opacity: 0.88;
+      transform: scale(0.982);
+      filter: blur(14px);
+    }
+  }
+
+  /* 精细外边缘流光线平缓光感微波 */
+  @keyframes apple-ai-edge-pulse {
+    0%, 100% {
+      opacity: 0.82;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  /* 0. Apple AI 流光宿主：预渲染硬件合成层与三阶段生命周期 (Tri-phase Organic Channel) */
+  .apple-ai-glow-host {
+    will-change: opacity, transform, filter, visibility;
+  }
+
+  /* 0.1 唤醒阶段 (Active Phase): 700ms 晨曦破晓展开，平滑升温对焦 */
+  .apple-ai-glow-host.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    filter: blur(0px) brightness(1);
+    pointer-events: none;
+    transition: 
+      opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 700ms cubic-bezier(0.16, 1, 0.3, 1),
+      filter 700ms cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0s linear 0s;
+  }
+
+  /* 0.2 优雅消融阶段 (Dissolving Phase): 翻译刚结束，850ms 正弦缓降余晖漫散与潮汐缓退，绝不断崖式暗淡或硬切 */
+  .apple-ai-glow-host.is-dissolving {
+    opacity: 0;
+    visibility: visible;
+    transform: scale(0.996);
+    filter: blur(10px) brightness(0.75);
+    pointer-events: none;
+    transition: 
+      opacity 850ms cubic-bezier(0.37, 0, 0.63, 1),
+      transform 850ms cubic-bezier(0.37, 0, 0.63, 1),
+      filter 850ms cubic-bezier(0.37, 0, 0.63, 1),
+      visibility 0s linear 0s;
+  }
+
+  .apple-ai-glow-host.is-dissolving .apple-ai-edge-line {
+    transition: opacity 850ms cubic-bezier(0.37, 0, 0.63, 1), filter 850ms cubic-bezier(0.37, 0, 0.63, 1);
+    opacity: 0;
+    filter: blur(2px);
+  }
+
+  .apple-ai-glow-host.is-dissolving .apple-ai-inward-bloom {
+    transition: opacity 850ms cubic-bezier(0.37, 0, 0.63, 1), filter 850ms cubic-bezier(0.37, 0, 0.63, 1);
+    opacity: 0;
+    filter: blur(16px);
+  }
+
+  /* 0.3 静止休眠阶段 (Idle Phase): visibility 延后彻底隐藏，0 漏光 0 开销 */
+  .apple-ai-glow-host.is-idle {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.992);
+    filter: blur(12px) brightness(0.6);
+    pointer-events: none;
+    transition: 
+      opacity 0s,
+      transform 0s,
+      filter 0s,
+      visibility 0s;
+  }
+
+  /* 1. 外轮廓：1.5px 极窄贴边高精七彩边框线（不向外凸出） */
+  .apple-ai-edge-line,
+  .rainbow-breathing-border {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 35;
+    padding: 1.5px;
+    background: linear-gradient(
+      125deg,
+      #ff3b30,
+      #ff9500,
+      #ffcc00,
+      #34c759,
+      #00c7be,
+      #32ade6,
+      #007aff,
+      #5856d6,
+      #af52de,
+      #ff2d55,
+      #ff3b30
+    );
+    background-size: 300% 300%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    animation: apple-ai-flow 4.8s ease-in-out infinite, apple-ai-edge-pulse 3.8s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+    will-change: opacity;
+  }
+
+  /* 2. 内向呼吸光幕：类似苹果 AI 响应，光晕由边缘向内部流动弥散并向内吸入呼吸 */
+  .apple-ai-inward-bloom,
+  .rainbow-breathing-aura {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 12;
+    overflow: hidden;
+    background: linear-gradient(
+      125deg,
+      #ff3b30,
+      #ff9500,
+      #ffcc00,
+      #34c759,
+      #00c7be,
+      #32ade6,
+      #007aff,
+      #5856d6,
+      #af52de,
+      #ff2d55,
+      #ff3b30
+    );
+    background-size: 300% 300%;
+    /* 边缘向内渐变遮罩：中心 62% 彻底通透保护正文，边缘向内柔和漫射 */
+    -webkit-mask-image: radial-gradient(ellipse 96% 90% at 50% 50%, transparent 62%, rgba(0, 0, 0, 0.45) 82%, black 100%);
+    mask-image: radial-gradient(ellipse 96% 90% at 50% 50%, transparent 62%, rgba(0, 0, 0, 0.45) 82%, black 100%);
+    animation: apple-ai-flow 4.8s ease-in-out infinite, apple-ai-inward-breathe 3.8s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+    will-change: opacity, transform, filter;
+  }
+
+  /* 页面与卡片平滑轻量过渡 (Fluid Micro-Transitions) */
+  @keyframes view-fade-scale {
+    0% {
+      opacity: 0;
+      transform: scale(0.985) translateY(3px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes view-soft-fade {
+    0% {
+      opacity: 0;
+      transform: translateY(2.5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-view-scale {
+    animation: view-fade-scale 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .animate-soft-fade {
+    animation: view-soft-fade 0.24s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  /* 桌面端按键触觉弹性反馈 */
+  .interactive-button {
+    transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .interactive-button:active {
+    transform: scale(0.965);
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 140, 160, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 140, 160, 0.45);
+}
+
+::selection {
+  background-color: rgba(0, 112, 235, 0.25);
+  color: inherit;
+}
+
