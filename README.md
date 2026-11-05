@@ -8,6 +8,17 @@
 
 ---
 
+## 架构总览
+
+<p align="center">
+  <img src="public/icon.svg" alt="Linguist 应用图标" width="88">
+</p>
+<p align="center">
+  <img src="docs/assets/lingust-architecture.svg" alt="Linguist Qt Quick、C++ 核心与 Windows 平台层架构图" width="100%">
+</p>
+
+<sub>该图对应本仓库 v0.1.0 UI Preview 的架构，不应与后续 AetherDict 项目的实现状态混为一谈。</sub>
+
 ## 核心特性
 
 | 模块 | 功能 |
